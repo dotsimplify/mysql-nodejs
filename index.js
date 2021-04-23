@@ -86,6 +86,10 @@ app.get("/show-all", async (req, res) => {
     console.log(error);
   }
 });
+
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
 app.listen(port, () => {
   console.log("server running at " + port);
 });
