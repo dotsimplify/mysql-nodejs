@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.1/tailwind.min.css"
+      integrity="sha512-BAK6UB671tmfzrkeH1CacTvgHQ3aLAFnT2KsigdATsc5X7+3u42tb5vjmAoDiqtxphP5dNZ3cDygivTsGEJhGw=="
+      crossorigin="anonymous"
+    />
+    <title>My SQL Data entry</title>
+  </head>
+  <body>
+    <div class="relative w-full bg-gradient-to-r from-pink-200 via-purple-200 to-gray-200">
+      <div class="mx-auhref px-4 w-full sm:px-6">
+        <div class="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
+          <div class="flex justify-start lg:w-0 lg:flex-1">
+            <Link href="/" class="no-underline hover:no-underline">
+              <a>
+                <h3 class="lg:text-4xl text-xl font-bold text-blue-800 ">SQL DATA ENTRY</h3>
+              </a>
+            </Link>
+          </div>
+          <nav class="md:flex space-x-10">
+            <a href="/">
+              <span class="lg:text-xl text-base font-semibold hover:text-blue-900">
+                Однократная
+              </span>
+            </a>
+              <a href="/show-all">
+                <span class="lg:text-xl text-base font-semibold hover:text-blue-900">
+                  Показать все записи
+                </span>
+              </a>
+
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="min-h-screen flex bg-purple-50">
+      <div class=" m-auto">
+        <h2 class="text-4xl text-center m-4 font-semibold ">Введите данные</h2>
+        <% if(message!=""){ %>
+          <p class="text-center bg-green-300 text-gray-700 p-4 rounded-lg font-bold tracking-wider "><%=message%></p>
+          <%}%>
+      <form
+        action="/"
+        method="POST"
+        class="p-8 border-2 border-blue-800 rounded-lg"
+      >
+        <label for="name" class="text-lg m-2 ml-0 text-gray-500 font-semibold"
+          >Имя</label
+        >
+        <input
+          required=""
+          type="text"
+          placeholder="Введите ваше имя"
+          name="name"
+          class="block focus:outline-none focus:border-blue-600 w-96 m-2 ml-0 p-4 h-12 border-2 border-gray-300 rounded-lg"
+        />
+        <label for="name" class="text-lg m-2 ml-0 text-gray-500 font-semibold"
+          >Телефонный номер</label
+        >
+        <input
+          required
+          type="number"
+          placeholder="Введите номер телефона"
+          name="phone"
+          class="block focus:outline-none focus:border-blue-600 w-96 m-2 ml-0 p-4 h-12 border-2 border-gray-300 rounded-lg"
+        />
+        <label for="name" class="text-lg m-2 ml-0 text-gray-500 font-semibold"
+          >Дата рождения</label
+        >
+        <input
+          required=""
+          type="date"
+          placeholder="введите вашу дату рождения"
+          name="dob"
+          class="block focus:outline-none focus:border-blue-600 w-96 m-2 ml-0 p-4 h-12 border-2 border-gray-300 rounded-lg"
+        />
+        <label
+          for="distance"
+          class="text-lg m-2 ml-0 text-gray-500 font-semibold"
+          >Расстояние от Москвы</label
+        >
+        <input
+          required=""
+          type="number"
+          placeholder="Введите расстояние от Москвы"
+          name="distance"
+          class="block focus:outline-none focus:border-blue-600 w-96 m-2 ml-0 p-4 h-12 border-2 border-gray-300 rounded-lg"
+        />
+        <button
+          id="submit"
+          type="submit"
+          class="focus:outline-none p-2 m-4 mb-2 border-2 border-red-700 hover:bg-white hover:text-black bg-red-700 font-semibold text-white rounded-lg"
+        >Отправить данные
+        </button>
+      </form></div>
+    </div>
+  </body>
+</html>

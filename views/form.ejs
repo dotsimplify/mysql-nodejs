@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.1.1/tailwind.min.css"
+      integrity="sha512-BAK6UB671tmfzrkeH1CacTvgHQ3aLAFnT2KsigdATsc5X7+3u42tb5vjmAoDiqtxphP5dNZ3cDygivTsGEJhGw=="
+      crossorigin="anonymous"
+    />
+    <title>My SQL Data entry</title>
+  </head>
+  <body>
+    <div class="relative w-full bg-gradient-to-r from-pink-200 via-purple-200 to-gray-200">
+        <div class="mx-auhref px-4 w-full sm:px-6">
+          <div class="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
+            <div class="flex justify-start lg:w-0 lg:flex-1">
+              <Link href="/" class="no-underline hover:no-underline">
+                <a>
+                  <h3 class="text-4xl font-bold text-blue-800 ">SQL DATA ENTRY</h3>
+                </a>
+              </Link>
+            </div>
+            <nav class="hidden md:flex space-x-10">
+              <a href="/">
+                <span class="lg:text-xl text-base font-semibold hover:text-blue-900">
+                  Однократная
+                </span>
+              </a>
+                <a href="/show-all">
+                  <span class="lg:text-xl text-base font-semibold hover:text-blue-900">
+                    Показать все записи
+                  </span>
+                </a>
+  
+            </nav>
+          </div>
+        </div>
+      </div>
+      <style>
+ .table-sortable th {
+  cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after {
+  content: "\25b4";
+}
+
+.table-sortable .th-sort-desc::after {
+  content: "\25be";
+}
+
+.table-sortable .th-sort-asc::after,
+.table-sortable .th-sort-desc::after {
+  margin-left: 5px;
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+      </style>
+      
+      <div class="flex min-h-screen">
+        <div class="w-full p-8">
+
+            
+      <table id="my-table" class="table-sortable border-2 border-gray-400 rounded-xl w-full p-8">
+        <thead class="bg-gray-100 m-8">
+          <tr>
+            <th class="text-xl lg:text-2xl text-blue-700">Имя</th>
+            <th class="text-xl lg:text-2xl text-blue-700">Телефонный номер</th>
+            <th class="text-xl lg:text-2xl text-blue-700">Дата рождения</th>
+            <th class="text-xl lg:text-2xl text-blue-700">Расстояние</th>
+          </tr>
+        </thead>
+        <tbody class="text-center bg-gray-600">
+
+          <% if (records.length>0){ records.forEach(element => { %>
+           <tr>
+            
+            <td class="text-lg lg:text-xl text-white"><%=element.name %></td>
+            <td class="text-lg lg:text-xl  text-white"><%=element.number %></td>
+            <td class="text-lg lg:text-xl  text-white"><%=element.date.toLocaleDateString() %></td>
+            <td class="text-lg lg:text-xl  text-white"><%=element.distance %></td>
+          </tr>
+
+          <% }) } %></tbody>
+          
+      </table>
+</div>
+    </div>
+<script src="../js/main.js"></script>
+  </body>
+</html>
